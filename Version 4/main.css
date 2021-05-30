@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2a1641;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  padding: 3rem;
+  max-width: 700px;
+  margin: auto;
+  /* text-align: center; */
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 4rem;
+  font-weight: 500;
+}
+#add-form {
+  margin-bottom: 30px;
+  display: flex;
+}
+button {
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-right: 5px;
+}
+
+.add-input {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  width: 60%;
+  margin: 0px auto;
+}
+
+ul {
+  width: 80%;
+  margin: 0 auto;
+}
+
+li {
+  max-width: 500px;
+  list-style-type: none;
+  padding: 0.8rem;
+  border: 1px solid #222;
+  background-color: #80808067;
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-text {
+  /* flex: 0 1 300px; */
+  max-width: 300px;
+}
+
+.buttons {
+  /* flex: 0 1 100px; */
+  max-width: 100px;
+}
+
+.wrap {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.sm-btn {
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 10px;
+}
+.delete {
+  background-color: #cc7377;
+}
+.edit {
+  background-color: #ad9fc0;
+}
+.edit-todo {
+  max-width: 70%;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+.hide {
+  display: none;
+}
