@@ -80,6 +80,7 @@ class todoListController {
     this.displayTodos();
   }
 }
+
 // control class instantiation
 const controlTodoList = new todoListController();
 
@@ -199,9 +200,9 @@ class todoListUI {
   static UItoggletodo(e) {
     if (e.target.type === 'checkbox') {
       if (e.target.checked) {
-        e.target.parentElement.style.textDecoration = 'line-through';
-        e.target.parentElement.style.color = '#999';
+        e.target.parentElement.classList.add('checked');
 
+        // Check the todolist array items
         controlTodoList.todos.forEach((todo, i) => {
           if (e.target.parentElement.textContent.trim() === todo.todoText) {
             controlTodoList.toggleTodo(i);
@@ -209,8 +210,7 @@ class todoListUI {
           }
         });
       } else {
-        e.target.parentElement.style.textDecoration = 'none';
-        e.target.parentElement.style.color = 'inherit';
+        e.target.parentElement.classList.remove('checked');
 
         // Uncheck the todolist array items
         controlTodoList.todos.forEach((todo, i) => {
@@ -224,7 +224,21 @@ class todoListUI {
   }
 
   static UItoggleALL() {
-    controlTodoList.toggleAll();
+    document.querySelectorAll('li span').forEach(todo => {
+      const checkBtn = document.querySelectorAll('input[type = "checkbox"]');
+
+      checkBtn.forEach(check => {
+        if (!check.checked) {
+          todo.classList.toggle('checked');
+          check.checked = true;
+        } else {
+          check.checked = false;
+          todo.classList.toggle('checked');
+        }
+      });
+    });
+
+    // controlTodoList.toggleAll();
   }
   static UIclearALL() {
     output.innerHTML = '';
